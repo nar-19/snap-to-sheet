@@ -30,7 +30,8 @@ SCOPES = [
     'https://www.googleapis.com/auth/spreadsheets',
     'https://www.googleapis.com/auth/drive'
 ]
-SPREADSHEET_NAME = 'Receipts Data' # Change this to your Google Sheet name
+# SPREADSHEET_NAME = 'Receipts Data' # Change this to your Google Sheet name
+SPREADSHEET_NAME = 'receipts-ocr' # Change this to your Google Sheet name
 
 # --- CSS Styling and Animations ---
 st.markdown(
