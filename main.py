@@ -1,6 +1,7 @@
 
 import streamlit as st
-from google import genai
+# from google import genai
+import google.generativeai as genai
 import json
 import os
 import time
@@ -18,8 +19,8 @@ if not GEMINI_API_KEY:
     st.stop()
 
 # Configure Gemini API
-# genai.configure(api_key=GEMINI_API_KEY)
-client = genai.Client(api_key = st.secrets["GEMINI_API_KEY"])
+genai.configure(api_key=GEMINI_API_KEY)
+# client = genai.Client(api_key = st.secrets["GEMINI_API_KEY"])
 model = genai.GenerativeModel('gemini-pro-vision')
 
 # Google Sheets configuration
