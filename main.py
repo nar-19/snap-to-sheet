@@ -123,7 +123,8 @@ st.markdown(
 def parse_gemini_response(text_response):
     """Parses JSON text response from Gemini and extracts data."""
     try:
-        data = json.loads(text_response)
+        text_response1 = text_response.split("json")[1].replace("```","")
+        data = json.loads(text_response1)
         merchant_name = data.get('merchant_name')
         date = data.get('date')
         total_amount = data.get('total_amount')
