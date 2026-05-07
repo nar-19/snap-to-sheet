@@ -153,7 +153,9 @@ def parse_gemini_response(text_response):
 def get_gspread_client():
     """Authenticates with Google Sheets using service account."""
     try:
-        creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+        # creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+        gcp_service_account_info = st.secrets["GCP_JSON"]
+        creds = Credentials.from_service_account_info(gcp_service_account_info, scopes=SCOPES)
         gc = gspread.authorize(creds)
         return gc
     except Exception as e:
