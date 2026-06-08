@@ -290,3 +290,11 @@ st.sidebar.markdown(
     - Ensure `service_account.json` is in the root directory and the service account has `Editor` access to the sheet.
     """
 )
+st.sidebar.subheader("Captured data:")
+st.sidebar.markdown(
+    f"""
+    - **Name:** `{SPREADSHEET_NAME}`
+    """
+)
+gsheet_url = f"https://docs.google.com/spreadsheets/d/1T7rCoXNExRjm-ahGBiP-bSkY2FoTlUOQzW6JfDZ_N2I/edit?usp=sharing"
+st.link_button("✨ Open Google Sheet", gsheet_url, use_container_width=True)
